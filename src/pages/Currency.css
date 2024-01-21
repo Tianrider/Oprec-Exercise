@@ -1,0 +1,207 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+  background: #FF0000;
+}
+
+.Currency {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    background: linear-gradient(318deg, #e52e71, #ff8a00);
+    background-size: 400% 400%;
+  
+    -webkit-animation: AnimationName 16s ease infinite;
+    -moz-animation: AnimationName 16s ease infinite;
+    animation: AnimationName 16s ease infinite;
+}
+
+.home-button {
+  color: white;
+  width: 8vh;
+  height: 8vh;
+  margin-top: 2vh;
+  margin-left: 20px;
+}
+
+.home-button:hover{
+  scale: 110%;
+  animation: ease-in;
+  animation-duration: 300ms;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 36%}
+    50%{background-position:100% 65%}
+    100%{background-position:0% 36%}
+  }
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 36%}
+    50%{background-position:100% 65%}
+    100%{background-position:0% 36%}
+  }
+@keyframes AnimationName {
+    0%{background-position:0% 36%}
+    50%{background-position:100% 65%}
+    100%{background-position:0% 36%}
+  }
+  
+  html {
+    height: -webkit-fill-available;
+  }
+  
+.slider-thumb{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.slider-thumb::before {
+    position: absolute;
+    content: "";
+    width: 60%; /* Adjust as needed for responsiveness */
+    min-height: 90vh; /* Adjust as needed for responsiveness */
+    background: #17141d;
+    border-radius: 62% 47% 82% 35% / 45% 45% 80% 66%;
+    will-change: border-radius, transform, opacity;
+    animation: sliderShape 5s linear infinite;
+    display: block;
+    -webkit-animation: sliderShape 5s linear infinite;
+}
+  
+  form {
+    top : 50%;
+  }
+  
+  @keyframes sliderShape {
+    0%, 100% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    34% {
+        border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        transform: translate3d(0, 5px, 0) rotateZ(0.01deg);
+    }
+    50% {
+        transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+    }
+    67% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        transform: translate3d(0, -3px, 0) rotateZ(0.01deg);
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .slider-thumb::before {
+        width: 70%; /* Adjust as needed for responsiveness */
+        height: 70vw; /* Adjust as needed for responsiveness */
+    }
+  }
+  
+  @media (max-width: 600px){
+    .slider-thumb::before {
+        width: 90%;
+        height: 60%;
+    }
+    .home-button {
+      width: 5vh;
+      height: 5vh;
+      margin-top: 2vh;
+      margin-left: 20px;
+    }
+    form {
+        top: 55% !important;
+    }
+    .select-container {
+        display : flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin-top : 1vh !important;
+    }
+    .select-container div {
+        padding-top: 10px;
+    }
+    .title{
+        font-size: 7vh !important;
+    }
+  }
+  
+  form label {
+    color: white;
+  }
+  
+  form input {
+    max-width: 70%;
+  }
+  
+  .title {
+    color: white;
+    font-size: 10vh;
+  }
+  
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .select-container {
+    margin-top : 5vh;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  #amount_one {
+    height: 7vh;
+    text-align: center;
+    background-color: rgb(253, 238, 238);
+    width: 30vh;
+    box-shadow: rgba(255, 255, 255, 0.44) 0px 3px 8px;
+  }
+  
+  .arrow-img {
+    height: auto;
+    width: 30px;
+    object-fit: cover;
+  }
+  
+  .result-text {  
+    color: white;
+  
+  }
+  
+  .result-text-container {
+    table-layout: fixed;
+  }
+
+  .form-select {
+    border-radius: 15px;
+    width: 15vh;
+  }
+  
+  .btn {
+    color: white;
+    background-image: linear-gradient(90deg, #e52e71, #ff8a00);
+    transition: 0.5s;
+  }
+  
+  .btn:hover {
+    box-shadow: rgba(255, 255, 255, 0.44) 0px 3px 8px;
+    color: white;
+  }
+  
