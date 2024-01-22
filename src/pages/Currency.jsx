@@ -38,9 +38,11 @@ const Currency = () => {
     let url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${selectedBaseCurrency.toLowerCase()}.json`;
     const response = await fetch(url);
     const data = await response.json();
-    let exchangeRate = data.usd[selectedTargetCurrency.toLowerCase()];
+    selectedBaseCurrency = selectedBaseCurrency.toLowerCase();
+
+    let exchangeRate = data[selectedBaseCurrency][selectedTargetCurrency.toLowerCase()];
     let lastUpdated = data.date;
-    setExchangeRate(exchangeRate.toFixed(2));
+    setExchangeRate(exchangeRate);
     setLastUpdated(lastUpdated);
   };
 
@@ -119,7 +121,7 @@ const Currency = () => {
         <div className="result-text-container">
           <h6 className="result-text">Current Exchange Rate: </h6>
           <p className="font-weight-light font-italic text-white">{`last updated (${lastUpdated})`}</p>
-          <h6 className="result-text">{`1 ${baseCurrency} = ${exchangeRate} ${targetCurrency}`}</h6>
+          <h6 className="result-text">{`1 ${baseCurrency} = ${exchangeRate.toFixed(6)} ${targetCurrency}`}</h6>
         </div>
 
         <div className="col-12 submit-button">
