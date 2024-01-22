@@ -13,6 +13,8 @@ An assessment website for ExerciseFTUI's Technical Software Open Recruitment.
 
 [![My Skills](https://skills.thijs.gg/icons?i=nodejs)](https://skills.thijs.gg)
 
+## Currency API From:
+> https://github.com/fawazahmed0/currency-api
 
 ## FAQ
 
