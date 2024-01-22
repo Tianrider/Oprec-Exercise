@@ -5,9 +5,13 @@ An assessment website for ExerciseFTUI's Technical Software Open Recruitment.
 
 ## Tech Stack
 
-**Client:** React, Vite, BootStrap
+**Client:**
 
-**Server:** Node
+[![My Skills](https://skills.thijs.gg/icons?i=react,vite,bootstrap)](https://skills.thijs.gg)
+
+**Server:** 
+
+[![My Skills](https://skills.thijs.gg/icons?i=nodejs)](https://skills.thijs.gg)
 
 
 ## FAQ
