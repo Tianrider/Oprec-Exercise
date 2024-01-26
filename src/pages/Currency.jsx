@@ -4,8 +4,8 @@ import { RiHomeLine } from "react-icons/ri";
 
 const Currency = () => {
   const [result, setResult] = useState(null);
-  const [baseCurrency, setBaseCurrency] = useState("USD"); // default value = USD
-  const [targetCurrency, setTargetCurrency] = useState("IDR"); // default value = IDR
+  const [baseCurrency, setBaseCurrency] = useState("usd"); // default value = USD
+  const [targetCurrency, setTargetCurrency] = useState("idr"); // default value = IDR
   const [exchangeRate, setExchangeRate] = useState(null);
   const [amount, setAmount] = useState(1); // default value = 1
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -35,9 +35,12 @@ const Currency = () => {
   }, [baseCurrency, targetCurrency, amount, exchangeRate]);
 
   const getExchangeRate = async (selectedBaseCurrency,selectedTargetCurrency) => {
-    let url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${selectedBaseCurrency.toLowerCase()}.json`;
+    const timestamp = new Date().getTime(); // Get current timestamp
+    let url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${selectedBaseCurrency.toLowerCase()}.json?_=${timestamp}`;
+    
     const response = await fetch(url);
     const data = await response.json();
+    console.log(url, data);
     selectedBaseCurrency = selectedBaseCurrency.toLowerCase();
 
     let exchangeRate = data[selectedBaseCurrency][selectedTargetCurrency.toLowerCase()];
@@ -121,7 +124,7 @@ const Currency = () => {
         <div className="result-text-container">
           <h6 className="result-text">Current Exchange Rate: </h6>
           <p className="font-weight-light font-italic text-white">{`last updated (${lastUpdated})`}</p>
-          <h6 className="result-text">{`1 ${baseCurrency} = ${exchangeRate.toFixed(6)} ${targetCurrency}`}</h6>
+          <h6 className="result-text">{`1 ${baseCurrency} = ${exchangeRate} ${targetCurrency}`}</h6>
         </div>
 
         <div className="col-12 submit-button">
